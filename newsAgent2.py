@@ -114,6 +114,7 @@ class HTMLDestination:
             <head>
                 <title>Today's News</title>
                 <meta charset="UTF-8">
+                <link rel="stylesheet" href="format.css" type="text/css"/>
             </head>
             <body>
                 <h1>Today's News</h1>
