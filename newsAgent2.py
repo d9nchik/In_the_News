@@ -120,26 +120,27 @@ class HTMLDestination:
                 <h1>Today's News</h1>
         ''', file=out)
         print('<ul>', file=out)
-        id = 0
+        ids = 0
         for item in items:
-            id += 1
+            ids += 1
             print(' <li><a href="#{}">{}</a></li>'
-                  .format(id, item.title), file=out)
+                  .format(ids, item.title), file=out)
         print('</ul>', file=out)
 
-        id = 0
+        ids = 0
         for item in items:
-            id += 1
+            ids += 1
             print('<h2 id="{}">{}</h2>'
-                  .format(id, item.title), file=out)
+                  .format(ids, item.title), file=out)
             print('<pre>{}</pre>'.format(item.body), file=out)
         print("""
         </body>
         </html>
         """, file=out)
+        out.close()
 
 
-def runDefaultSetup():
+def run_default_setup():
     """
     A default setup of sources and destination. Modify to taste.
     """
@@ -163,4 +164,5 @@ def runDefaultSetup():
     agent.distribute()
 
 
-if __name__ == '__main__': runDefaultSetup()
+if __name__ == '__main__':
+    run_default_setup()
